@@ -23,9 +23,7 @@ function fetchWeather(lat, lon) {
     });
 }
 
-// Function to get user's location
 function getLocation() {
-  // Check if geolocation is available
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       position => {
@@ -34,7 +32,6 @@ function getLocation() {
         fetchWeather(lat, lon);  
       },
       error => {
-        // Handle permission denied or other errors
         if (error.code === error.PERMISSION_DENIED) {
           document.getElementById("weatherInfo").innerHTML = "Location access denied. Please allow location access.";
         } else {
